@@ -1,5 +1,37 @@
 <!DOCTYPE html> 
  <title>Xat` Profile</title>
+ <html>
+  
+<head>
+    <title>
+      fade-in effect on page load using JavaScript
+    </title>
+    <script type="text/javascript">
+        var opacity = 0;
+        var intervalID = 0;
+        window.onload = fadeIn;
+  
+        function fadeIn() {
+            setInterval(show, 200);
+        }
+  
+        function show() {
+            var body = document.getElementById("body");
+            opacity = Number(window.getComputedStyle(body)
+                             .getPropertyValue("opacity"));
+            if (opacity < 1) {
+                opacity = opacity + 0.1;
+                body.style.opacity = opacity
+            } else {
+                clearInterval(intervalID);
+            }
+        }
+    </script>
+</head>
+  
+<body id="body" style="opacity: 0;">
+</body>
+<html>
   
 <head>
     <title>Floating Animation</title>
